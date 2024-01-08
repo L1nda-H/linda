@@ -1,33 +1,32 @@
-"use client";
+"use client"
 
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import SectionHeading from './section-heading';
+import { FaLinkedin } from 'react-icons/fa6';
+import { FaGear } from 'react-icons/fa6';
+import { FaGithub } from 'react-icons/fa6';
 
 export default function Intro() {
   return (
-    <motion.section className='text-center'
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}>
-      <div className="flex items-center justify-center">
-        <div>
-          <Image src={'/pfp.png'}
-            width="192"
-            height="192"
-            quality="95"
-            priority={true}
-            alt="Linda profile picture"
-            className='h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl' />
-        </div>
-      </div>
-      <div className="flex-col">
-        <SectionHeading>About Me</SectionHeading>
-        <p className="flex">
-          Hi! My name is Linda. I am an undergraduate student at Cornell University's College of Engineering studying Computer Science and minoring in Game Design and Film.
-        </p>
-      </div>
+    <section>
+      <motion.div className="flex items-center justify-center"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}>
+        <Image src={'/pfp.png'}
+          width="192"
+          height="192"
+          quality="95"
+          priority={true}
+          alt="Linda profile picture"
+          className='h-28 w-28 rounded-full object-cover border-[0.35rem] border-white shadow-xl' />
+      </motion.div>
+      <motion.div className='flex justify-between py-5 text-4xl space-x-10'>
+        <a href="" className="rounded-full border-[0.2rem] border-white shadow-md transition-transform"><FaGithub /></a>
+        <a href="" className="rounded-md border-[0.2rem] border-white shadow-md"><FaLinkedin /></a>
+        <a href="" className="rounded-full border-[0.2rem] border-white shadow-md"><FaGear /></a>
+      </motion.div>
+    </section>
 
-    </motion.section>
   )
 }

@@ -21,10 +21,21 @@ export default function Intro() {
           alt="Linda profile picture"
           className='h-28 w-28 rounded-full object-cover border-[0.35rem] border-white shadow-xl' />
       </motion.div>
-      <motion.div className='flex justify-between py-5 text-4xl space-x-10'>
-        <a href="" className="rounded-full border-[0.2rem] border-white shadow-md transition-transform"><FaGithub /></a>
-        <a href="" className="rounded-md border-[0.2rem] border-white shadow-md"><FaLinkedin /></a>
-        <a href="" className="rounded-full border-[0.2rem] border-white shadow-md"><FaGear /></a>
+      <motion.div className='flex justify-between py-5 text-4xl space-x-10 sm:space-x-5'
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}>
+        <a href=""
+          className="rounded-full border-[0.2rem] border-white shadow-md hover:shadow-none transition-shadow">
+          <FaGithub className='fill-sky-950 hover:fill-sky-900 transition-color' />
+        </a>
+        <a href=""
+          className="rounded-md border-[0.2rem] border-white shadow-md hover:shadow-none transition-shadow">
+          <FaLinkedin className='fill-sky-950 hover:fill-sky-900 transition-color' />
+        </a>
+        <a href=""
+          className="rounded-full border-[0.2rem] border-white shadow-md hover:shadow-none transition-shadow">
+          <FaGear className='fill-sky-950 hover:fill-sky-900 transition-color' />
+        </a>
       </motion.div>
     </section>
 

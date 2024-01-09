@@ -1,6 +1,9 @@
 import React from "react";
 import { FaGear } from "react-icons/fa6";
 import cosmicswing from "@/public/cosmicswing.png";
+import secretclarkson from "@/public/secretclarkson.png"
+import fotl from "@/public/fotl.gif"
+import codeicon from "@/public/codeicon.svg"
 
 export const links = [
   {
@@ -38,11 +41,32 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    title: "Secret Clarkson",
+    description:
+      "My friends and I enjoy playing a mafia-like social deduction game, so we recreated it as a terminal-based game in OCaml... with a slight mammalian twist.",
+    tags: ["OCaml", "Functional Programming"],
+    imageUrl: secretclarkson,
+  },
+  {
     title: "Cosmic Swing",
     description:
-      "I acted as a programmer and level designer in a team of 8 to develop Cosmic Swing, a rotating physics platformer featured at the annual Game Development Initiative at Cornell Showcase.",
-    tags: ["Java"],
+      "As a programmer and level designer, I collaborated in a team of 8 to develop Cosmic Swing, a rotating physics platformer featured at the annual Game Development Initiative at Cornell Showcase.",
+    tags: ["Java", "Box2D", "JSON"],
     imageUrl: cosmicswing,
+  },
+  {
+    title: "LearnWell",
+    description:
+      "In a team of 2 Android developers and one other backend developer, we created",
+    tags: ["Python", "SQLAlchemy", "Flask"],
+    imageUrl: codeicon,
+  },
+  {
+    title: "Fury of the Lost Knight",
+    description:
+      "Over the summer, I joined the Game Development Association at Cornell to create a platformer game with 18 other game-making enthusiasts.",
+    tags: ["C#", "Unity"],
+    imageUrl: fotl,
   },
 ] as const;
 

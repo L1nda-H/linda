@@ -9,7 +9,7 @@ import { FaGithub } from 'react-icons/fa6';
 
 export default function Intro() {
   return (
-    <section>
+    <section id='home' className='scroll-mt-[100rem]'>
       <motion.div className="flex items-center justify-center"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}>

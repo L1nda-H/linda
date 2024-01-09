@@ -11,21 +11,17 @@ export const links = [
     hash: "#home",
   },
   {
-    name: "About",
-    hash: "#about",
-  },
-  {
     name: "Projects",
     hash: "#projects",
-  },
-  {
-    name: "Skills",
-    hash: "#skills",
   },
   {
     name: "Experience",
     hash: "#experience",
   },
+  {
+    name: "Gallery",
+    hash: "#gallery"
+  }
 ] as const;
 
 export const experiencesData = [
@@ -57,7 +53,7 @@ export const projectsData = [
   {
     title: "LearnWell",
     description:
-      "In a team of 2 Android developers and one other backend developer, we created",
+      "In a team of 2 Android developers and one other backend developer, we created a tutee-tutor matching app for classes for the AppDev Hack-Challenge.",
     tags: ["Python", "SQLAlchemy", "Flask"],
     imageUrl: codeicon,
   },

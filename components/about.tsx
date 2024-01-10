@@ -1,12 +1,30 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SectionHeading from './section-heading';
+import { useInView } from 'react-intersection-observer';
+import { useActiveSectionContext } from '@/context/active-section-context';
 
 export default function Intro() {
+  const { ref, inView } = useInView({
+    threshold: 0.80,
+  });
+
+  const { setActiveSection } = useActiveSectionContext();
+
+  // console.log(inView);
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection("Home");
+    }
+  }, [inView, setActiveSection]
+  )
+
   return (
     <motion.section className='text-center'
+      ref={ref}
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.175 }}>

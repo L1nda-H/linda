@@ -3,24 +3,11 @@
 import React, { useEffect } from 'react'
 import SectionHeading from './section-heading'
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer';
-import { useActiveSectionContext } from '@/context/active-section-context';
+import { useSectionInView } from '@/lib/hooks'
+
 
 export default function Experience() {
-  const { ref, inView } = useInView({
-    threshold: 0.20,
-  });
-
-  const { setActiveSection } = useActiveSectionContext();
-
-  // console.log(inView);
-
-  useEffect(() => {
-    if (inView) {
-      setActiveSection("Experience");
-    }
-  }, [inView, setActiveSection]
-  )
+  const { ref } = useSectionInView("Experience", 0.2);
 
   return (
     <section id='experience' ref={ref} className='scroll-mt-12'>

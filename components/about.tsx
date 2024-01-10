@@ -5,22 +5,10 @@ import { motion } from 'framer-motion';
 import SectionHeading from './section-heading';
 import { useInView } from 'react-intersection-observer';
 import { useActiveSectionContext } from '@/context/active-section-context';
+import { useSectionInView } from '@/lib/hooks';
 
 export default function Intro() {
-  const { ref, inView } = useInView({
-    threshold: 0.80,
-  });
-
-  const { setActiveSection } = useActiveSectionContext();
-
-  // console.log(inView);
-
-  useEffect(() => {
-    if (inView) {
-      setActiveSection("Home");
-    }
-  }, [inView, setActiveSection]
-  )
+  const { ref } = useSectionInView("Home");
 
   return (
     <motion.section className='text-center'

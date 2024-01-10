@@ -7,22 +7,10 @@ import { projectsData } from '@/lib/data';
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer';
 import { useActiveSectionContext } from '@/context/active-section-context';
+import { useSectionInView } from '@/lib/hooks';
 
 export default function Projects() {
-  const { ref, inView } = useInView({
-    threshold: 0.40,
-  });
-
-  const { setActiveSection } = useActiveSectionContext();
-
-  console.log(inView);
-
-  useEffect(() => {
-    if (inView) {
-      setActiveSection("Projects");
-    }
-  }, [inView, setActiveSection]
-  )
+  const { ref } = useSectionInView("Projects", 0.3);
 
   return (
     <motion.section

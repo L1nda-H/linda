@@ -1,6 +1,7 @@
 import Header from '@/components/header'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import ActiveSectionContextProvider from '@/context/active-section-context'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,8 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en" className='!scroll-smooth'>
       <body className={`${inter.className} bg-sky-50`}>
-        <Header />
-        {children}
+        <ActiveSectionContextProvider>
+          {/* Children only become client components if they are imported as children components. It does not matter that it is wrapped in a client component */}
+          <Header />
+          {children}
+        </ActiveSectionContextProvider>
+
       </body>
     </html>
   )

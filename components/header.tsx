@@ -2,13 +2,13 @@
 
 import { motion, spring } from "framer-motion";
 import { links } from "@/lib/data"
-import React from "react";
-import { useState } from 'react';
+import React, { useContext } from "react";
 import Link from "next/link";
 import clsx from 'clsx';
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Header() {
-  const [activeSection, setActiveSection] = useState("Home");
+  const { activeSection, setActiveSection } = useActiveSectionContext();
 
   return (
     <header className="z-[999] relative">

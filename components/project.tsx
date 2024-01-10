@@ -45,8 +45,9 @@ export default function Project({
         </div>
         <Image
           src={imageUrl}
-          alt='Cosmic Swing Character'
-          quality={95}
+          alt='Project Graphic'
+          quality={90}
+          priority={true}
           className='absolute hidden md:block md:w-[18rem] sm:w-[14rem] group-odd:-right-4 md:top-3 -rotate-12 
         
         group-hover:-rotate-[20deg]

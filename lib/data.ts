@@ -33,6 +33,14 @@ export const experiencesData = [
     icon: React.createElement(FaGear),
     date: "2023",
   },
+  {
+    title: "Combat Robotics @ Cornell",
+    location: "Ithaca, NY",
+    description:
+      "I joined the Combat Robotics @ Cornell Project Team's Marketing Subteam and became the Marketing Subteam Lead after a semester.",
+    icon: React.createElement(FaGear),
+    date: "2023",
+  },
 ] as const;
 
 export const projectsData = [

@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'swiper/css';
+@import 'tailwindcss/tailwind.css';
+
 html {
   --line-color: #0c4a6e;
+}
+
+.swiper-container {
+  max-width: fit-content;
+  max-height: 54rem;
+  border-radius: 2rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+@media (min-width: 640px) {
+  .swiper-container {
+    max-width: 54rem;
+    max-height: fit-content;
+    align-items: center;
+  }
+
+  .swiper-slide {
+    width: 50rem;
+  }
+}
+
+.swiper-slide {
+  display: flex;
+  flex: content;
+}
+
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }

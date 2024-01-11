@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa6';
-import { FaGear } from 'react-icons/fa6';
+import { FaPaperclip } from 'react-icons/fa6';
 import { FaGithub } from 'react-icons/fa6';
 import { useSectionInView } from '@/lib/hooks';
 
@@ -36,7 +36,7 @@ export default function Intro() {
         </a>
         <a href=""
           className="rounded-full border-[0.2rem] border-white shadow-md hover:shadow-none transition-shadow">
-          <FaGear className='fill-sky-950 hover:fill-sky-900 transition-color' />
+          <FaPaperclip className='fill-sky-950 hover:fill-sky-900 transition-color' />
         </a>
       </motion.div>
     </section>

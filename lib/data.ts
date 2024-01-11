@@ -1,5 +1,6 @@
 import React from "react";
 import { FaGear } from "react-icons/fa6";
+import { FaSchool } from "react-icons/fa6";
 import cosmicswing from "@/public/cosmicswing.png";
 import secretclarkson from "@/public/secretclarkson.png"
 import fotl from "@/public/fotl.gif"
@@ -29,17 +30,25 @@ export const experiencesData = [
     title: "Combat Robotics @ Cornell",
     location: "Ithaca, NY",
     description:
-      "I joined the Combat Robotics @ Cornell Project Team's Marketing Subteam and became the Marketing Subteam Lead after a semester.",
+      "I joined the Combat Robotics @ Cornell Project Team's Marketing Subteam and worked on projects ranging from video games to Giving Day planning to website maintenance.",
     icon: React.createElement(FaGear),
-    date: "2023",
+    date: "October 2022 - Present",
+  },
+  {
+    title: "Discrete Structures AEW Instructor",
+    location: "Ithaca, NY",
+    description:
+      "During the Fall 2023 semester, I co-faciliated a workshop of 18 students for 2 hours a week to encourage collaboration on problems at and above the level of the Discrete Structures course instruction.",
+    icon: React.createElement(FaSchool),
+    date: "August 2023 - December 2023"
   },
   {
     title: "Combat Robotics @ Cornell",
     location: "Ithaca, NY",
     description:
-      "I joined the Combat Robotics @ Cornell Project Team's Marketing Subteam and became the Marketing Subteam Lead after a semester.",
+      "I became the Marketing Subteam lead of Combat Robotics @ Cornell and now and guide a team of 13 students through various projects. Last semester, our team raised over $9,000 during Cornell's month-long Crowdfunding event!",
     icon: React.createElement(FaGear),
-    date: "2023",
+    date: "August 2023 - Present",
   },
 ] as const;
 
@@ -74,6 +83,6 @@ export const projectsData = [
   },
 ] as const;
 
-export const skillsData = [
-  "Java",
-] as const;
+// export const skillsData = [
+//   "Java",
+// ] as const;

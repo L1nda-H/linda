@@ -10,42 +10,34 @@ import v from '@/public/characterdesign/venusian.png'
 export const characterdesign = [
   {
     url: tgr,
-    alt: "The Great Race Project",
-    caption: "The Great Race Assignment"
+    alt: "thegreatrace.png",
   },
   {
     url: pi,
-    alt: "Prop Inspired Project",
-    caption: "The Great Race Assignment"
+    alt: "propinspired.png",
   },
   {
     url: at,
-    alt: "Aging Trio Project",
-    caption: "The Great Race Assignment"
+    alt: "agingtrio.png",
   },
   {
     url: v,
-    alt: "The Venusian Project",
-    caption: "The Great Race Assignment"
+    alt: "venusian.png",
   },
   {
     url: h,
-    alt: "Habitare Project",
-    caption: "The Great Race Assignment"
+    alt: "habitare.png",
   },
   {
     url: mp1,
-    alt: "Music Project 1",
-    caption: "The Great Race Assignment"
+    alt: "musicproject1.png",
   },
   {
     url: mp2,
-    alt: "Music Project 2",
-    caption: "The Great Race Assignment"
+    alt: "musicproject2.png",
   },
   {
     url: mp3,
-    alt: "Music Project 3",
-    caption: "The Great Race Assignment"
+    alt: "musicproject3.png",
   },
-]
+] as const;

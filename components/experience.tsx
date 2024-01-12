@@ -11,7 +11,7 @@ export default function Experience() {
   const { ref } = useSectionInView("Experience", 0.25);
 
   return (
-    <section id='experience' ref={ref} className='scroll-mt-12 mb-12 sm:mb-28'>
+    <section id='experience' ref={ref} className='scroll-mt-12 sm:mb-28'>
       <SectionHeading>Experience</SectionHeading>
       <p className='mb-10 text-center'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       <VerticalTimeline lineColor=''>

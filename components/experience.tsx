@@ -11,9 +11,9 @@ export default function Experience() {
   const { ref } = useSectionInView("Experience", 0.25);
 
   return (
-    <section id='experience' ref={ref} className='scroll-mt-12 sm:mb-28'>
+    <section id='experience' ref={ref} className='scroll-mt-12 sm:mb-20'>
       <SectionHeading>Experience</SectionHeading>
-      <p className='mb-10 text-center'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p className='mb-10 text-center'>Here are some of the organizations and activities that I've contributed to during college so far! See my resume for more detail.</p>
       <VerticalTimeline lineColor=''>
         {experiencesData.map((item, index) => (
           <React.Fragment key={index} >

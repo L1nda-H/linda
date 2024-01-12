@@ -26,11 +26,13 @@ export default function Intro() {
       <motion.div className='flex justify-between py-5 text-4xl space-x-10 sm:space-x-5'
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}>
-        <a href=""
+        <a href="https://github.com/L1nda-H"
+          target='blank'
           className="rounded-full border-[0.2rem] border-white shadow-md hover:shadow-none transition-shadow">
           <FaGithub className='fill-sky-950 hover:fill-sky-900 transition-color' />
         </a>
-        <a href=""
+        <a href="https://www.linkedin.com/in/linda-ly-hu/"
+          target='blank'
           className="rounded-md border-[0.2rem] border-white shadow-md hover:shadow-none transition-shadow">
           <FaLinkedin className='fill-sky-950 hover:fill-sky-900 transition-color' />
         </a>

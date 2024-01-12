@@ -36,7 +36,8 @@ export default function Intro() {
           className="rounded-md border-[0.2rem] border-white shadow-md hover:shadow-none transition-shadow">
           <FaLinkedin className='fill-sky-950 hover:fill-sky-900 transition-color' />
         </a>
-        <a href=""
+        <a href="@/public/Hu_Linda-CV.pdf"
+          download
           className="rounded-full border-[0.2rem] border-white shadow-md hover:shadow-none transition-shadow">
           <FaPaperclip className='fill-sky-950 hover:fill-sky-900 transition-color' />
         </a>

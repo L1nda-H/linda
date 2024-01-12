@@ -3,21 +3,10 @@
 import React from 'react'
 import SectionHeading from './section-heading'
 import { useSectionInView } from '@/lib/hooks';
-// import { characterdesign } from '@/lib/images';
+import Slider from './slider';
+
 import { characterdesign } from '@/lib/galleryimgs';
-import Image from 'next/image';
-
-import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-
-type ImageObject = {
-  url: string;
-  alt: string;
-}
+import { graphictees } from '@/lib/galleryimgs';
 
 export default function Gallery() {
   const { ref } = useSectionInView("Gallery", .5);
@@ -25,23 +14,10 @@ export default function Gallery() {
   return (
     <section id='gallery' ref={ref}>
       <SectionHeading>Gallery</SectionHeading>
-      <p className=' font-medium pb-8 text-center'>Besides programming, I also enjoy creating and drawing! Here are some works I've made for classes, for others, and for fun.</p>
-      <SwiperComponent className='swiper-container'
-        slidesPerView={'auto'}
-        centeredSlides={true}
-        spaceBetween={30}
-        grabCursor={true}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Navigation, Pagination]}>
-        {characterdesign.map((img: ImageObject, index: number) => (
-          <SwiperSlide key={index} className='swiper-slide'>
-            <Image src={img.url} alt={img.alt} height={500} quality={100} className='mx-auto' onContextMenu={(e) => e.preventDefault()} />
-          </SwiperSlide>
-        ))}
-      </SwiperComponent>
+      <p className=' font-normal pb-8 text-center'>Besides programming, I also enjoy creating and drawing! Here are some works I've made for classes, for others, and for fun throughout the past years.</p>
+
+      <Slider category={characterdesign} caption='PMA 3614: Creative Character Design.' />
+      <Slider category={graphictees} caption='TShirt Graphics Designed for Various Clubs.' />
     </section>
   )
 }

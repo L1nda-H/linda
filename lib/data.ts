@@ -59,6 +59,7 @@ export const projectsData = [
       "My friends and I enjoy playing a mafia-like social deduction game, so we recreated it as a terminal-based game in OCaml... with a slight mammalian twist.",
     tags: ["OCaml", "Functional Programming"],
     imageUrl: secretclarkson,
+    projectLink: "https://github.coecis.cornell.edu/cm823/cs3110-final"
   },
   {
     title: "Cosmic Swing",
@@ -66,6 +67,7 @@ export const projectsData = [
       "As a programmer and level designer, I collaborated in a team of 8 to develop Cosmic Swing, a rotating physics platformer featured at the annual Game Development Initiative at Cornell Showcase.",
     tags: ["Java", "Box2D", "JSON"],
     imageUrl: cosmicswing,
+    projectLink: "https://gdiac.cs.cornell.edu/gdiac/showcase/gallery/cosmicswing/"
   },
   {
     title: "LearnWell",
@@ -73,6 +75,7 @@ export const projectsData = [
       "In a team of 2 Android developers and one other backend developer, we created a tutee-tutor matching app for classes for the AppDev Hack-Challenge.",
     tags: ["Python", "SQLAlchemy", "Flask"],
     imageUrl: codeicon,
+    projectLink: "https://github.com/L1nda-H/hack-challenge"
   },
   {
     title: "Fury of the Lost Knight",
@@ -80,6 +83,7 @@ export const projectsData = [
       "Over the summer, I joined the Game Development Association at Cornell to create a platformer game with 18 other game-making enthusiasts.",
     tags: ["C#", "Unity"],
     imageUrl: fotl,
+    projectLink: "https://dgacornell.itch.io/fury-of-the-lost-knight"
   },
 ] as const;
 

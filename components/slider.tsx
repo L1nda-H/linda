@@ -27,6 +27,8 @@ export default function Slider({ category, spaceBetween = 30, caption }: SliderP
         centeredSlides={true}
         spaceBetween={spaceBetween}
         grabCursor={true}
+        lazyPreloaderClass='true'
+        lazyPreloadPrevNext={2}
         pagination={{
           clickable: true,
         }}

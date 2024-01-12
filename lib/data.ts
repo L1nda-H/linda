@@ -80,13 +80,9 @@ export const projectsData = [
   {
     title: "Fury of the Lost Knight",
     description:
-      "Over the summer, I joined the Game Development Association at Cornell to create a platformer game with 18 other game-making enthusiasts.",
+      "Over summer 2023, I had the chance to join 18 other game-making enthusiasts in the Game Development Association at Cornell to create a platformer game.",
     tags: ["C#", "Unity"],
     imageUrl: fotl,
     projectLink: "https://dgacornell.itch.io/fury-of-the-lost-knight"
   },
 ] as const;
-
-// export const skillsData = [
-//   "Java",
-// ] as const;

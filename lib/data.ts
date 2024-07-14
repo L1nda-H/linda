@@ -5,6 +5,7 @@ import cosmicswing from "@/public/cosmicswing.png";
 import secretclarkson from "@/public/secretclarkson.png"
 import fotl from "@/public/fotl.gif"
 import codeicon from "@/public/codeicon.svg"
+import { title } from "process";
 
 export const links = [
   {
@@ -49,6 +50,13 @@ export const experiencesData = [
       "I became the Marketing Subteam lead of Combat Robotics @ Cornell and now and guide a team of 13 students through various projects. Last semester, our team raised over $9,000 during Cornell's month-long Crowdfunding event!",
     icon: React.createElement(FaGear),
     date: "August 2023 - Present",
+  },
+  {
+    title: "Wells Fargo Sophomore Discovery Fellowship Program",
+    location: "Charlotte, NC",
+    description: "I had the exciting opportunity to join a cohort of 16 fellow rising juniors in shadowing the Enterprise Functions Technology Line of Business at Wells Fargo.",
+    icon: React.createElement(FaGear),
+    date: "June 2024 - August 2024",
   },
 ] as const;
 

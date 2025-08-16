@@ -2,7 +2,9 @@ import React from "react";
 import { FaGear, FaSchool, FaAmazon } from "react-icons/fa6";
 import cosmicswing from "@/public/cosmicswing.png";
 import secretclarkson from "@/public/secretclarkson.png";
-import fotl from "@/public/fotl.gif";
+import huggingface from "@/public/hf-logo.svg";
+import showAttendAndTell from "@/public/show-attend-tell.png";
+import perry from "@/public/perry.png";
 import codeicon from "@/public/codeicon.svg";
 
 export const links = [
@@ -69,6 +71,31 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    title: "Show, Attend and Tell Paper Reimplementation",
+    description:
+      "In a team of 5, my friends and I recreated an image captioning model with soft attention that achieved 65% accuracy—within 2% of Xu et al. (2015)—and evaluated it using BLEU and METEOR metrics.",
+    tags: ["Pytorch", "Python"],
+    imageUrl: showAttendAndTell,
+    projectLink: "https://github.com/sunny525s/Show_Attend_and_Tell",
+  },
+  {
+    title: "Trigger Happy",
+    description:
+      "My friends and I made a multiplayer party game set in a 1920s speakeasy. I helped design the networking and the animation controller while leading the character design.",
+    tags: ["C++", "CUGL"],
+    imageUrl: perry,
+    projectLink:
+      "https://gdiac.cs.cornell.edu/gdiac/showcase/gallery/triggerhappy/",
+  },
+  {
+    title: "Text Emotion Classifier",
+    description:
+      "I finetuned the pretrained DistillBERT model to classify text into 27 different emotions, achieving an accuracy of 76%, for my Intro to ML class.",
+    tags: ["Python", "PyTorch", "HuggingFace"],
+    imageUrl: huggingface,
+    projectLink: "",
+  },
+  {
     title: "Secret Clarkson",
     description:
       "My friends and I enjoy playing a mafia-like social deduction game, so we recreated it as a terminal-based game in OCaml... with a slight mammalian twist.",
@@ -93,12 +120,12 @@ export const projectsData = [
     imageUrl: codeicon,
     projectLink: "https://github.com/L1nda-H/hack-challenge",
   },
-  {
-    title: "Fury of the Lost Knight",
-    description:
-      "Over summer 2023, I had the chance to join 18 other game-making enthusiasts in the Game Development Association at Cornell to create a platformer game.",
-    tags: ["C#", "Unity"],
-    imageUrl: fotl,
-    projectLink: "https://dgacornell.itch.io/fury-of-the-lost-knight",
-  },
+  // {
+  //   title: "Fury of the Lost Knight",
+  //   description:
+  //     "Over summer 2023, I had the chance to join 18 other game-making enthusiasts in the Game Development Association at Cornell to create a platformer game.",
+  //   tags: ["C#", "Unity"],
+  //   imageUrl: fotl,
+  //   projectLink: "https://dgacornell.itch.io/fury-of-the-lost-knight",
+  // },
 ] as const;

@@ -5,12 +5,7 @@ import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
 import Slider from "./slider";
 
-import {
-  triggerhappy,
-  characterdesign,
-  graphictees,
-  blender,
-} from "@/lib/galleryimgs";
+import { characterdesign, graphictees, blender } from "@/lib/galleryimgs";
 
 export default function Gallery() {
   const { ref } = useSectionInView("Gallery", 0.25);

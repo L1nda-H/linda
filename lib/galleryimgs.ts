@@ -5,11 +5,6 @@ function importAll(file: any) {
   }));
 }
 
-const triggerhappyContext = require.context(
-  "@/public/triggerhappy",
-  false,
-  /\.(png)$/
-);
 const characterdesignContext = require.context(
   "@/public/characterdesign",
   false,
@@ -22,9 +17,8 @@ const graphicteesContext = require.context(
 );
 const blenderContext = require.context("@/public/blender", false, /\.(png)$/);
 
-const triggerhappy = importAll(triggerhappyContext);
 const characterdesign = importAll(characterdesignContext);
 const graphictees = importAll(graphicteesContext);
 const blender = importAll(blenderContext);
 
-export { triggerhappy, characterdesign, graphictees, blender };
+export { characterdesign, graphictees, blender };

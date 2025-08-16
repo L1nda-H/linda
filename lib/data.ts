@@ -1,11 +1,9 @@
 import React from "react";
-import { FaGear } from "react-icons/fa6";
-import { FaSchool } from "react-icons/fa6";
+import { FaGear, FaSchool, FaAmazon } from "react-icons/fa6";
 import cosmicswing from "@/public/cosmicswing.png";
-import secretclarkson from "@/public/secretclarkson.png"
-import fotl from "@/public/fotl.gif"
-import codeicon from "@/public/codeicon.svg"
-import { title } from "process";
+import secretclarkson from "@/public/secretclarkson.png";
+import fotl from "@/public/fotl.gif";
+import codeicon from "@/public/codeicon.svg";
 
 export const links = [
   {
@@ -22,26 +20,26 @@ export const links = [
   },
   {
     name: "Gallery",
-    hash: "#gallery"
-  }
+    hash: "#gallery",
+  },
 ] as const;
 
 export const experiencesData = [
   {
-    title: "Combat Robotics @ Cornell",
-    location: "Ithaca, NY",
+    title: "Amazon Software Development Engineer Intern",
+    location: "Denver, CO",
     description:
-      "I joined the Combat Robotics @ Cornell Project Team's Marketing Subteam and worked on projects ranging from video games to Giving Day planning to website maintenance.",
-    icon: React.createElement(FaGear),
-    date: "October 2022 - Present",
+      "I worked with the Basket Building team to create an MCP server that allows Cline to access bundle product data in order to resolve seller tickets, reducing over half the ticket queue.",
+    icon: React.createElement(FaAmazon),
+    date: "June 2025 - August 2025",
   },
   {
-    title: "Discrete Structures AEW Instructor",
-    location: "Ithaca, NY",
+    title: "Wells Fargo Sophomore Discovery Fellowship Program",
+    location: "Charlotte, NC",
     description:
-      "During the Fall 2023 semester, I co-faciliated a workshop of 18 students for 2 hours a week to encourage collaboration on problems at and above the level of the Discrete Structures course instruction.",
-    icon: React.createElement(FaSchool),
-    date: "August 2023 - December 2023"
+      "I had the exciting opportunity to join a cohort of 16 fellow rising juniors in shadowing the Enterprise Functions Technology Line of Business at Wells Fargo.",
+    icon: React.createElement(FaGear),
+    date: "June 2024 - August 2024",
   },
   {
     title: "Combat Robotics @ Cornell",
@@ -49,14 +47,23 @@ export const experiencesData = [
     description:
       "I became the Marketing Subteam lead of Combat Robotics @ Cornell and now and guide a team of 13 students through various projects. Last semester, our team raised over $9,000 during Cornell's month-long Crowdfunding event!",
     icon: React.createElement(FaGear),
-    date: "August 2023 - Present",
+    date: "August 2023 - May 2025",
   },
   {
-    title: "Wells Fargo Sophomore Discovery Fellowship Program",
-    location: "Charlotte, NC",
-    description: "I had the exciting opportunity to join a cohort of 16 fellow rising juniors in shadowing the Enterprise Functions Technology Line of Business at Wells Fargo.",
+    title: "Discrete Structures AEW Instructor",
+    location: "Ithaca, NY",
+    description:
+      "During the Fall 2023 semester, I co-faciliated a workshop of 18 students for 2 hours a week to encourage collaboration on problems at and above the level of the Discrete Structures course instruction.",
+    icon: React.createElement(FaSchool),
+    date: "August 2023 - December 2023",
+  },
+  {
+    title: "Combat Robotics @ Cornell",
+    location: "Ithaca, NY",
+    description:
+      "I joined the Combat Robotics @ Cornell Project Team's Marketing Subteam and worked on projects ranging from video games to Giving Day planning to website maintenance.",
     icon: React.createElement(FaGear),
-    date: "June 2024 - August 2024",
+    date: "October 2022 - May 2025",
   },
 ] as const;
 
@@ -67,7 +74,7 @@ export const projectsData = [
       "My friends and I enjoy playing a mafia-like social deduction game, so we recreated it as a terminal-based game in OCaml... with a slight mammalian twist.",
     tags: ["OCaml", "Functional Programming"],
     imageUrl: secretclarkson,
-    projectLink: "https://github.coecis.cornell.edu/cm823/cs3110-final"
+    projectLink: "https://github.coecis.cornell.edu/cm823/cs3110-final",
   },
   {
     title: "Cosmic Swing",
@@ -75,7 +82,8 @@ export const projectsData = [
       "As a programmer and level designer, I collaborated in a team of 8 to develop Cosmic Swing, a rotating physics platformer featured at the annual Game Development Initiative at Cornell Showcase.",
     tags: ["Java", "Box2D", "JSON"],
     imageUrl: cosmicswing,
-    projectLink: "https://gdiac.cs.cornell.edu/gdiac/showcase/gallery/cosmicswing/"
+    projectLink:
+      "https://gdiac.cs.cornell.edu/gdiac/showcase/gallery/cosmicswing/",
   },
   {
     title: "LearnWell",
@@ -83,7 +91,7 @@ export const projectsData = [
       "In a team of 2 Android developers and one other backend developer, we created a tutee-tutor matching app for classes for the AppDev Hack-Challenge.",
     tags: ["Python", "SQLAlchemy", "Flask"],
     imageUrl: codeicon,
-    projectLink: "https://github.com/L1nda-H/hack-challenge"
+    projectLink: "https://github.com/L1nda-H/hack-challenge",
   },
   {
     title: "Fury of the Lost Knight",
@@ -91,6 +99,6 @@ export const projectsData = [
       "Over summer 2023, I had the chance to join 18 other game-making enthusiasts in the Game Development Association at Cornell to create a platformer game.",
     tags: ["C#", "Unity"],
     imageUrl: fotl,
-    projectLink: "https://dgacornell.itch.io/fury-of-the-lost-knight"
+    projectLink: "https://dgacornell.itch.io/fury-of-the-lost-knight",
   },
 ] as const;

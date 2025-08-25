@@ -47,9 +47,9 @@ export const experiencesData = [
     title: "Combat Robotics @ Cornell",
     location: "Ithaca, NY",
     description:
-      "I became the Marketing Subteam lead of Combat Robotics @ Cornell and now and guide a team of 13 students through various projects. Last semester, our team raised over $9,000 during Cornell's month-long Crowdfunding event!",
+      "I became the Marketing Subteam lead of Combat Robotics @ Cornell and guided a team of 13 students through various projects. During that semester, our subteam raised over $9,000 during Cornell's month-long Crowdfunding event!",
     icon: React.createElement(FaGear),
-    date: "August 2023 - May 2025",
+    date: "August 2023 - May 2024",
   },
   {
     title: "Discrete Structures AEW Instructor",

@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 import SectionHeading from "./section-heading";
 import {
   gallerySections,
@@ -11,6 +12,12 @@ import {
 
 const GAP = 8;
 const SECTION_SPACE_BEFORE = 56;
+
+const entrance = {
+  initial: { y: 100, opacity: 0 },
+  animate: { y: 0, opacity: 1 },
+  transition: { delay: 0.175 },
+};
 
 function columnCount(width: number) {
   if (width >= 1320) return 5;
@@ -62,7 +69,7 @@ export default function Gallery() {
   }, [sections]);
 
   return (
-    <section id="gallery" className="mx-auto w-full max-w-[100rem]">
+    <motion.section id="gallery" className="mx-auto w-full max-w-[100rem]" {...entrance}>
       <div className="text-center">
         <SectionHeading>Gallery</SectionHeading>
         <p className="mx-auto w-full max-w-[42rem] pb-10 font-normal">
@@ -105,7 +112,7 @@ export default function Gallery() {
           <GalleryFlow sections={sections} />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

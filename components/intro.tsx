@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa6';
 import { FaPaperclip } from 'react-icons/fa6';
 import { FaGithub } from 'react-icons/fa6';
+import pfp from '@/public/pfp.png';
 
 export default function Intro() {
   return (
@@ -13,10 +14,10 @@ export default function Intro() {
       <motion.div className="flex items-center justify-center"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}>
-        <Image src={'/pfp.png'}
-          width="192"
-          height="192"
-          quality="95"
+        <Image src={pfp}
+          width={192}
+          height={192}
+          quality={95}
           priority={true}
           alt="Linda profile picture"
           className='h-28 w-28 rounded-full object-cover border-[0.35rem] border-white shadow-xl dark:border-[#12162A]' />

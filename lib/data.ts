@@ -35,7 +35,7 @@ export const experiencesData = [
     title: "Databricks Software Engineering Intern",
     location: "Sunnyvale, CA",
     description:
-      "I worked on improving the release pipeline configuration management experience at Databricks, where I reduced workflow friction for engineers managing 1500+ release services.",
+      "I worked on improving the release pipeline configuration management experience at Databricks, reducing workflow friction for engineers managing 1500+ release services.",
     icon: React.createElement(SiDatabricks),
     date: "June 2026 - September 2026",
   },
@@ -88,7 +88,7 @@ export const projectsData = [
       "I scaled Monte Carlo Tree Search for Go to 370K games per second across 128 threads using distributed Zobrist hashing, transposition tables, and dedicated I/O threads.",
     tags: ["C++", "OpenMPI", "OpenMP"],
     imageUrl: parallelMcts,
-    projectLink: "",
+    projectLink: "https://github.com/L1nda-H/parallel-mcts",
   },
   {
     title: "Sharded Key-Value Store",
@@ -121,7 +121,7 @@ export const projectsData = [
     tags: ["C++", "CUGL"],
     imageUrl: perry,
     projectLink:
-      "https://gdiac.cs.cornell.edu/gdiac/showcase/gallery/triggerhappy/",
+      "https://bowers.cornell.edu/news-stories/students-got-game-annual-video-game-showcase",
   },
   {
     title: "Text Emotion Classifier",

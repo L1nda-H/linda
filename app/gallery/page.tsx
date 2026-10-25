@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function GalleryPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 text-sky-950 dark:text-sky-50">
+    <main className="flex min-h-screen w-full flex-col items-center px-4 pb-16 pt-24 text-sky-950 dark:text-sky-50 sm:px-6 lg:px-10">
       <Gallery />
     </main>
   )

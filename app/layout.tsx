@@ -1,7 +1,6 @@
 import Header from '@/components/header'
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Footer from '@/components/footer'
 import ThemeToggle from '@/components/theme-toggle'
 import Script from 'next/script'
 
@@ -25,7 +24,6 @@ export default function RootLayout({
         </Script>
         <Header />
         {children}
-        <Footer />
         <ThemeToggle />
       </body>
     </html>

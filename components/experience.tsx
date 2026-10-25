@@ -18,26 +18,27 @@ export default function Experience() {
               icon={item.icon}
               iconStyle={{
                 boxShadow: "none",
-                color: "#0c4a6e",
-                backgroundColor: "#f0f9ff",
-                border: "0.25rem solid #0c4a6e",
+                color: "var(--timeline-icon)",
+                backgroundColor: "var(--timeline-icon-bg)",
+                border: "0.25rem solid var(--timeline-icon)",
                 fontSize: "1.5rem"
               }}
               date={item.date}
-              dateClassName='text-sky-900/90'
+              dateClassName='text-sky-900/90 dark:text-sky-100'
               contentArrowStyle={{
-                borderRight: '0.75rem solid #0c4a6e',
+                borderRight: '0.75rem solid var(--timeline-card)',
               }}
               className='shadow-none'
               contentStyle={{
                 boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1)",
-                background: "white",
+                background: "var(--timeline-card)",
+                color: "var(--timeline-text)",
                 borderRadius: "20px",
                 padding: "1.25rem 1.75rem",
               }}>
               <h3 className='font-semibold capitalize'>{item.title}</h3>
               <p className='!mt-0'>{item.location}</p>
-              <p className='text-sky-900/70'>{item.description}</p>
+              <p className='text-sky-900/70 dark:text-sky-100'>{item.description}</p>
             </VerticalTimelineElement>
           </React.Fragment>
         ))}

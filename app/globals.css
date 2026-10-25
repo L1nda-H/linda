@@ -6,7 +6,40 @@
 @import 'tailwindcss/tailwind.css';
 
 html {
+  color-scheme: light;
   --line-color: #0c4a6e;
+  --timeline-icon: #0c4a6e;
+  --timeline-icon-bg: #f0f9ff;
+  --timeline-card: #ffffff;
+  --timeline-text: #082f49;
+}
+
+html.dark {
+  color-scheme: dark;
+  --line-color: #bae6fd;
+  --timeline-icon: #e0f2fe;
+  --timeline-icon-bg: #1E233B;
+  --timeline-card: #323A5E;
+  --timeline-text: #f0f9ff;
+}
+
+html.dark .vertical-timeline-element-content {
+  border: 1px solid rgba(186, 230, 253, 0.35);
+}
+
+html.dark .swiper-button-next,
+html.dark .swiper-button-prev {
+  color: #f0f9ff;
+}
+
+html.dark .swiper-pagination-bullet {
+  background: #bae6fd;
+  opacity: 0.45;
+}
+
+html.dark .swiper-pagination-bullet-active {
+  background: #f0f9ff;
+  opacity: 1;
 }
 
 .swiper-container {

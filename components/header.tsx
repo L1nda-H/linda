@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <header className="z-[999] relative">
-      <motion.div className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[32rem] sm:rounded-full"
+      <motion.div className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[32rem] sm:rounded-full dark:border-white/15 dark:bg-[#323A5E]/90 dark:shadow-black/40"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}>
       </motion.div>
@@ -29,10 +29,11 @@ export default function Header() {
                 key={link.href}
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}>
-                <Link className={clsx("flex w-full items-center justify-center px-3 py-3 hover:text-sky-800 transition",
-                  {
-                    "text-sky-950": isActive,
-                  })}
+                <Link className={clsx("flex w-full items-center justify-center px-3 py-3 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-800 dark:focus-visible:outline-sky-100",
+                  isActive
+                    ? "text-sky-950"
+                    : "text-sky-900 hover:text-sky-800 dark:text-sky-100 dark:hover:text-white"
+                )}
                   href={link.href}>
                   {link.name}
 

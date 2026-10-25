@@ -15,12 +15,12 @@ export default function Intro() {
       <div className="flex-col max-w-[56rem] sm:mx-20">
         <SectionHeading>Welcome!</SectionHeading>
         <p className="text-lg/6 justify-center pb-5 leading-loose">
-          <b>{"My name is Linda!"}</b> I am an undergraduate{" "}
-          <b>{"Computer Science"}</b> student at <b>{"Cornell University"}</b>{" "}
-          in the College of Engineering, graduating in Spring 2026. I have
-          experience in <u>{"applied AI/ML"}</u>, <u>{"game development"}</u>,
-          and <u>{"fullstack development"}</u>. Besides programming, some of my
-          hobbies include designing games and drawing.
+          <b>Hi, my name is Linda.</b> I am a master&apos;s student studying{" "}
+          <b>computer science</b> at <b>Cornell University</b>, graduating in
+          December 2026. I enjoy thinking about <u>distributed systems</u>,{" "}
+          <u>high-performance computing</u>, <u>AI/ML</u>, and{" "}
+          <u>backend development</u>. Besides programming, some of my hobbies
+          include game design, drawing, film, and photography.
         </p>
         <p className="flex text-lg/6 justify-center"></p>
       </div>

@@ -22,11 +22,11 @@ export default function Gallery() {
       />
       <Slider
         category={blender}
-        caption="Blender Projects from Normal Modeling to Photogrammetry"
+        caption="Blender"
       />
       <Slider
         category={graphictees}
-        caption="TShirt Graphics Designed for Various Clubs."
+        caption="TShirt Designs."
       />
     </section>
   );

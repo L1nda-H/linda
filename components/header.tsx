@@ -2,13 +2,51 @@
 
 import { motion } from "framer-motion";
 import { links } from "@/lib/data"
-import React from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from 'clsx';
 
+type Indicator = {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+};
+
 export default function Header() {
   const pathname = usePathname();
+  const listRef = useRef<HTMLUListElement>(null);
+  const itemRefs = useRef(new Map<string, HTMLLIElement>());
+  const [indicator, setIndicator] = useState<Indicator | null>(null);
+
+  const activeHref = links.find((link) =>
+    link.href === "/" ? pathname === "/" : pathname.startsWith(link.href)
+  )?.href;
+
+  useLayoutEffect(() => {
+    const list = listRef.current;
+    const activeItem = activeHref ? itemRefs.current.get(activeHref) : undefined;
+    if (!list || !activeItem) return;
+
+    // offsetLeft/offsetTop stay relative to the nav, so a page scroll
+    // (including Next's scroll-to-top on navigation) cannot shift the pill.
+    const measure = () => {
+      setIndicator({
+        x: activeItem.offsetLeft,
+        y: activeItem.offsetTop,
+        width: activeItem.offsetWidth,
+        height: activeItem.offsetHeight,
+      });
+    };
+
+    measure();
+
+    const observer = new ResizeObserver(measure);
+    observer.observe(list);
+    itemRefs.current.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, [activeHref]);
 
   return (
     <header className="z-[999] relative">
@@ -18,17 +56,30 @@ export default function Header() {
       </motion.div>
 
       <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
-        <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-sky-900 sm:w-[initial] sm:flex-nowrap sm:gap-5">
+        <motion.ul
+          ref={listRef}
+          className="relative flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-sky-900 sm:w-[initial] sm:flex-nowrap sm:gap-5"
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+        >
+          {indicator && (
+            <motion.span
+              className="pointer-events-none absolute left-0 top-0 rounded-full bg-sky-100"
+              initial={false}
+              animate={indicator}
+              transition={{ type: "tween" }}
+            />
+          )}
           {links.map((link) => {
-            const isActive = link.href === "/"
-              ? pathname === "/"
-              : pathname.startsWith(link.href);
+            const isActive = link.href === activeHref;
 
             return (
-              <motion.li className="h-3/4 flex items-center justify-center relative"
+              <li className="h-3/4 flex items-center justify-center relative"
                 key={link.href}
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}>
+                ref={(node) => {
+                  if (node) itemRefs.current.set(link.href, node);
+                  else itemRefs.current.delete(link.href);
+                }}>
                 <Link className={clsx("flex w-full items-center justify-center px-3 py-3 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-800 dark:focus-visible:outline-sky-100",
                   isActive
                     ? "text-sky-950"
@@ -36,22 +87,11 @@ export default function Header() {
                 )}
                   href={link.href}>
                   {link.name}
-
-                  {
-                    isActive && (
-                      <motion.span className=" rounded-full bg-sky-100 absolute inset-0 -z-10" layoutId="activeSection"
-                        transition={{
-                          type: "tween",
-                          stiffness: 0,
-                        }}
-                      ></motion.span>
-                    )
-                  }
                 </Link>
-              </motion.li>
+              </li>
             );
           })}
-        </ul>
+        </motion.ul>
       </nav>
     </header>
   );

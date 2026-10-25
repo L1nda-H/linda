@@ -43,7 +43,7 @@ export const experiencesData = [
     title: "Amazon Software Development Engineer Intern",
     location: "Denver, CO",
     description:
-      "I worked with the Basket Building team to create an MCP server that allows Cline to access bundle product data in order to resolve seller tickets, reducing over half the ticket queue.",
+      "I worked with the Basket Building team to create an MCP server that allows agents to access bundle product data in order to resolve seller tickets.",
     icon: React.createElement(FaAmazon),
     date: "June 2025 - August 2025",
   },
@@ -51,7 +51,7 @@ export const experiencesData = [
     title: "Wells Fargo Sophomore Discovery Fellowship Program",
     location: "Charlotte, NC",
     description:
-      "I had the exciting opportunity to join a cohort of 16 fellow rising juniors in shadowing the Enterprise Functions Technology Line of Business at Wells Fargo.",
+      "I worked on the Enterprise Risk Reporting team in the Enterprise Functions Technology Line of Business at Wells Fargo.",
     icon: React.createElement(FaGear),
     date: "June 2024 - August 2024",
   },
@@ -67,7 +67,7 @@ export const experiencesData = [
     title: "Discrete Structures AEW Instructor",
     location: "Ithaca, NY",
     description:
-      "During the Fall 2023 semester, I co-faciliated a workshop of 18 students for 2 hours a week to encourage collaboration on problems at and above the level of the Discrete Structures course instruction.",
+      "During Fall 2023, I co-faciliated a workshop of 18 students for 2 hours a week to encourage collaboration on problems at and above the level of the Discrete Structures course instruction.",
     icon: React.createElement(FaSchool),
     date: "August 2023 - December 2023",
   },
@@ -85,7 +85,7 @@ export const projectsData = [
   {
     title: "Parallel Monte Carlo Tree Search",
     description:
-      "I scaled Monte Carlo Tree Search for Go to 370K games per second across 128 threads using distributed Zobrist hashing, transposition tables, and dedicated I/O threads.",
+      "A Monte Carlo Tree Search Go bot that scales to 370K games per second across 128 threads using distributed Zobrist hashing, transposition tables, and dedicated I/O threads.",
     tags: ["C++", "OpenMPI", "OpenMP"],
     imageUrl: parallelMcts,
     projectLink: "https://github.com/L1nda-H/parallel-mcts",
@@ -93,7 +93,7 @@ export const projectsData = [
   {
     title: "Sharded Key-Value Store",
     description:
-      "I built a linearizable, sharded key-value store with atomic multi-key transactions and dynamic load balancing.",
+      "A linearizable, sharded key-value store with atomic multi-key transactions and dynamic load balancing.",
     tags: ["Java", "Paxos", "2PC"],
     imageUrl: shardedKv,
     projectLink: "",
@@ -101,7 +101,7 @@ export const projectsData = [
   {
     title: "Grammar-Constrained Speech Parsing",
     description:
-      "I built an end-to-end speech parser that reached 92% accuracy on context-free grammar validation using Wav2Vec2.",
+      "An end-to-end speech parser that reached 92% accuracy on context-free grammar validation using Wav2Vec2.",
     tags: ["Python", "Wav2Vec2", "NLTK"],
     imageUrl: speechParsing,
     projectLink: "",
@@ -109,7 +109,7 @@ export const projectsData = [
   {
     title: "Show, Attend and Tell Paper Reimplementation",
     description:
-      "In a team of 5, my friends and I recreated an image captioning model with soft attention that achieved 65% accuracy—within 2% of Xu et al. (2015)—and evaluated it using BLEU and METEOR metrics.",
+      "An image captioning model with soft attention that achieves 65% accuracy—within 2% of Xu et al. (2015). Evaluated using BLEU and METEOR metrics.",
     tags: ["Pytorch", "Python"],
     imageUrl: showAttendAndTell,
     projectLink: "https://github.com/sunny525s/Show_Attend_and_Tell",
@@ -117,7 +117,7 @@ export const projectsData = [
   {
     title: "Trigger Happy",
     description:
-      "My friends and I made a multiplayer party game set in a 1920s speakeasy. I helped design the networking and the animation controller while leading the character design.",
+      "A multiplayer party game set in a 1920s speakeasy. I helped design the networking and the animation controller while leading the character design.",
     tags: ["C++", "CUGL"],
     imageUrl: perry,
     projectLink:
@@ -126,7 +126,7 @@ export const projectsData = [
   {
     title: "Text Emotion Classifier",
     description:
-      "I finetuned the pretrained DistillBERT model to classify text into 27 different emotions, achieving an accuracy of 76%, for my Intro to ML class.",
+      "A language model that classifies text into 27 different emotions, achieving an accuracy of 76%.",
     tags: ["Python", "PyTorch", "HuggingFace"],
     imageUrl: huggingface,
     projectLink: "",
@@ -134,7 +134,7 @@ export const projectsData = [
   {
     title: "Secret Clarkson",
     description:
-      "My friends and I enjoy playing a mafia-like social deduction game, so we recreated it as a terminal-based game in OCaml... with a slight mammalian twist.",
+      "A mafia-like social deduction game recreated as a terminal-based game in OCaml... with a slight mammalian twist.",
     tags: ["OCaml", "Functional Programming"],
     imageUrl: secretclarkson,
     projectLink: "https://github.coecis.cornell.edu/cm823/cs3110-final",
@@ -142,7 +142,7 @@ export const projectsData = [
   {
     title: "Cosmic Swing",
     description:
-      "As a programmer and level designer, I collaborated in a team of 8 to develop Cosmic Swing, a rotating physics platformer featured at the annual Game Development Initiative at Cornell Showcase.",
+      "A rotating physics platformer featured at the annual Game Development Initiative at Cornell Showcase.",
     tags: ["Java", "Box2D", "JSON"],
     imageUrl: cosmicswing,
     projectLink:
@@ -151,7 +151,7 @@ export const projectsData = [
   {
     title: "LearnWell",
     description:
-      "In a team of 2 Android developers and one other backend developer, we created a tutee-tutor matching app for classes for the AppDev Hack-Challenge.",
+      "A tutee-tutor matching app for classes for the AppDev Hack-Challenge.",
     tags: ["Python", "SQLAlchemy", "Flask"],
     imageUrl: codeicon,
     projectLink: "https://github.com/L1nda-H/hack-challenge",

@@ -1,11 +1,15 @@
 import React from "react";
 import { FaGear, FaSchool, FaAmazon } from "react-icons/fa6";
+import { SiDatabricks } from "react-icons/si";
 import cosmicswing from "@/public/cosmicswing.png";
 import secretclarkson from "@/public/secretclarkson.png";
 import huggingface from "@/public/hf-logo.svg";
 import showAttendAndTell from "@/public/show-attend-tell.png";
 import perry from "@/public/perry.png";
 import codeicon from "@/public/codeicon.svg";
+import parallelMcts from "@/public/parallel-mcts.svg";
+import shardedKv from "@/public/sharded-kv.svg";
+import speechParsing from "@/public/speech-parsing.svg";
 
 export const links = [
   {
@@ -27,6 +31,14 @@ export const links = [
 ] as const;
 
 export const experiencesData = [
+  {
+    title: "Databricks Software Engineering Intern",
+    location: "Sunnyvale, CA",
+    description:
+      "I worked on improving the release pipeline configuration management experience at Databricks, where I reduced workflow friction for engineers managing 1500+ release services.",
+    icon: React.createElement(SiDatabricks),
+    date: "June 2026 - September 2026",
+  },
   {
     title: "Amazon Software Development Engineer Intern",
     location: "Denver, CO",
@@ -70,6 +82,30 @@ export const experiencesData = [
 ] as const;
 
 export const projectsData = [
+  {
+    title: "Parallel Monte Carlo Tree Search",
+    description:
+      "I scaled Monte Carlo Tree Search for Go to 370K games per second across 128 threads using distributed Zobrist hashing, transposition tables, and dedicated I/O threads.",
+    tags: ["C++", "OpenMPI", "OpenMP"],
+    imageUrl: parallelMcts,
+    projectLink: "",
+  },
+  {
+    title: "Sharded Key-Value Store",
+    description:
+      "I built a linearizable, sharded key-value store with atomic multi-key transactions and dynamic load balancing.",
+    tags: ["Java", "Paxos", "2PC"],
+    imageUrl: shardedKv,
+    projectLink: "",
+  },
+  {
+    title: "Grammar-Constrained Speech Parsing",
+    description:
+      "I built an end-to-end speech parser that reached 92% accuracy on context-free grammar validation using Wav2Vec2.",
+    tags: ["Python", "Wav2Vec2", "NLTK"],
+    imageUrl: speechParsing,
+    projectLink: "",
+  },
   {
     title: "Show, Attend and Tell Paper Reimplementation",
     description:

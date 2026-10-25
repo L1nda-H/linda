@@ -161,9 +161,10 @@ function GalleryFlow({ sections }: { sections: GallerySection[] }) {
 
         const fromMarkup = Number(item.dataset.ratio);
         let ratio = fromMarkup > 0 ? fromMarkup : ratiosRef.current.get(image.url);
-        const img = item.querySelector("img");
-        if (!ratio && img && img.naturalWidth > 0) {
-          ratio = img.naturalHeight / img.naturalWidth;
+        const media = item.querySelector("img, video");
+        const measured = media ? mediaRatio(media) : undefined;
+        if (!ratio && measured) {
+          ratio = measured;
           ratiosRef.current.set(image.url, ratio);
         }
 
@@ -225,6 +226,16 @@ function GalleryFlow({ sections }: { sections: GallerySection[] }) {
   );
 }
 
+function mediaRatio(media: Element) {
+  if (media instanceof HTMLImageElement && media.naturalWidth > 0) {
+    return media.naturalHeight / media.naturalWidth;
+  }
+  if (media instanceof HTMLVideoElement && media.videoWidth > 0) {
+    return media.videoHeight / media.videoWidth;
+  }
+  return undefined;
+}
+
 function GalleryImage({
   image,
   label,
@@ -244,15 +255,30 @@ function GalleryImage({
       data-ratio={image.width && image.height ? image.height / image.width : undefined}
       className="absolute left-0 top-0"
     >
-      <img
-        src={image.url}
-        alt={`${label} ${index + 1}`}
-        loading={eager ? "eager" : "lazy"}
-        draggable={false}
-        onLoad={onLoad}
-        onContextMenu={(event) => event.preventDefault()}
-        className="h-full w-full object-cover"
-      />
+      {image.kind === "video" ? (
+        <video
+          src={image.url}
+          aria-label={`${label} ${index + 1}`}
+          muted
+          loop
+          autoPlay
+          playsInline
+          preload="metadata"
+          onLoadedMetadata={onLoad}
+          onContextMenu={(event) => event.preventDefault()}
+          className="h-full w-full object-cover"
+        />
+      ) : (
+        <img
+          src={image.url}
+          alt={`${label} ${index + 1}`}
+          loading={eager ? "eager" : "lazy"}
+          draggable={false}
+          onLoad={onLoad}
+          onContextMenu={(event) => event.preventDefault()}
+          className="h-full w-full object-cover"
+        />
+      )}
     </div>
   );
 }

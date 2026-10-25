@@ -3,6 +3,7 @@ export type GalleryAsset = {
   alt: string;
   width?: number;
   height?: number;
+  kind: "image" | "video";
 };
 
 export type GallerySection = {
@@ -25,13 +26,23 @@ function importAll(context: any): GalleryAsset[] {
       width: width as number | undefined,
       height: height as number | undefined,
       alt: fileName.substring(fileName.lastIndexOf("/") + 1) as string,
+      kind: /\.mp4$/i.test(fileName) ? "video" : "image",
     };
   });
 }
 
 // Add a section by dropping a public folder of PNGs and appending an entry here.
 // New PNGs in an existing folder are picked up automatically.
+// The Blender folder also picks up MP4s, which render as looping videos.
 export const gallerySections: GallerySection[] = [
+  {
+    id: "digitalillustration",
+    label: "Digital illustrations",
+    caption: "Digital illustrations",
+    images: importAll(
+      require.context("@/public/digitalillustration", false, /\.(png)$/)
+    ),
+  },
   {
     id: "character-design",
     label: "Character design",
@@ -44,7 +55,9 @@ export const gallerySections: GallerySection[] = [
     id: "blender",
     label: "Blender",
     caption: "Blender",
-    images: importAll(require.context("@/public/blender", false, /\.(png)$/)),
+    images: importAll(
+      require.context("@/public/blender", false, /\.(png|mp4)$/)
+    ),
   },
   {
     id: "t-shirt-designs",

@@ -32,6 +32,60 @@ export default function Gallery() {
     []
   );
   const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
+  const scrollFrame = useRef<number | null>(null);
+
+  const scrollToSection = useCallback((id: string, updateHash = false) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const margin = Number.parseFloat(getComputedStyle(element).scrollMarginTop) || 0;
+    const top = Math.max(0, element.getBoundingClientRect().top + window.scrollY - margin);
+
+    if (scrollFrame.current) {
+      window.cancelAnimationFrame(scrollFrame.current);
+      scrollFrame.current = null;
+    }
+
+    setActiveId(id);
+
+    if (Math.abs(window.scrollY - top) <= 2) {
+      window.scrollTo({ top, left: 0, behavior: "instant" });
+    } else {
+      const start = window.scrollY;
+      const distance = top - start;
+      const duration = Math.min(850, Math.max(450, Math.abs(distance) * 0.25));
+      const startTime = performance.now();
+      let expected = start;
+
+      const step = (now: number) => {
+        if (Math.abs(window.scrollY - expected) > 2) {
+          scrollFrame.current = null;
+          return;
+        }
+
+        const progress = Math.min(1, (now - startTime) / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        expected = start + distance * eased;
+        window.scrollTo({
+          top: progress < 1 ? expected : top,
+          left: 0,
+          behavior: "instant",
+        });
+
+        if (progress < 1) {
+          scrollFrame.current = window.requestAnimationFrame(step);
+        } else {
+          scrollFrame.current = null;
+        }
+      };
+
+      scrollFrame.current = window.requestAnimationFrame(step);
+    }
+
+    if (updateHash && window.location.hash !== `#${id}`) {
+      window.history.pushState(null, "", `#${id}`);
+    }
+  }, []);
 
   useEffect(() => {
     const hash = window.location.hash.replace("#", "");
@@ -58,15 +112,25 @@ export default function Gallery() {
       frame = window.requestAnimationFrame(update);
     };
 
+    const onHashChange = () => {
+      const nextHash = window.location.hash.replace("#", "");
+      if (sections.some((section) => section.id === nextHash)) {
+        scrollToSection(nextHash);
+      }
+    };
+
     update();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
+    window.addEventListener("hashchange", onHashChange);
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
+      window.removeEventListener("hashchange", onHashChange);
       if (frame) window.cancelAnimationFrame(frame);
+      if (scrollFrame.current) window.cancelAnimationFrame(scrollFrame.current);
     };
-  }, [sections]);
+  }, [sections, scrollToSection]);
 
   return (
     <motion.section id="gallery" className="mx-auto w-full max-w-[100rem]" {...entrance}>
@@ -92,7 +156,10 @@ export default function Gallery() {
                   <a
                     href={`#${section.id}`}
                     aria-current={active ? "location" : undefined}
-                    onClick={() => setActiveId(section.id)}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      scrollToSection(section.id, true);
+                    }}
                     className={clsx(
                       "block border-l-2 py-1.5 pl-3 text-xs leading-snug transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-800 dark:focus-visible:outline-sky-100",
                       active

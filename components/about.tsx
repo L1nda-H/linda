@@ -1,17 +1,13 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import SectionHeading from "./section-heading";
-import { useSectionInView } from "@/lib/hooks";
 
 export default function Intro() {
-  const { ref } = useSectionInView("Home");
-
   return (
     <motion.section
       className="text-center"
-      ref={ref}
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.175 }}

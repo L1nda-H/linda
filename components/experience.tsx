@@ -3,15 +3,12 @@
 import React from 'react'
 import SectionHeading from './section-heading'
 import { experiencesData } from '@/lib/data'
-import { useSectionInView } from '@/lib/hooks'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
 export default function Experience() {
-  const { ref } = useSectionInView("Experience", 0.25);
-
   return (
-    <section id='experience' ref={ref} className='scroll-mt-12 sm:mb-20'>
+    <section id='experience' className='sm:mb-20'>
       <SectionHeading>Experience</SectionHeading>
       <p className='mb-10 text-center'>Some of the organizations and activities I've had the opportunity to contribute to throughout college so far.</p>
       <VerticalTimeline lineColor=''>

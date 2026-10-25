@@ -10,19 +10,19 @@ import codeicon from "@/public/codeicon.svg";
 export const links = [
   {
     name: "Home",
-    hash: "#home",
+    href: "/",
   },
   {
     name: "Projects",
-    hash: "#projects",
+    href: "/projects",
   },
   {
     name: "Experience",
-    hash: "#experience",
+    href: "/experience",
   },
   {
     name: "Gallery",
-    hash: "#gallery",
+    href: "/gallery",
   },
 ] as const;
 

@@ -2,18 +2,15 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import { useSectionInView } from "@/lib/hooks";
 import Slider from "./slider";
 
 import { characterdesign, graphictees, blender } from "@/lib/galleryimgs";
 
 export default function Gallery() {
-  const { ref } = useSectionInView("Gallery", 0.25);
-
   return (
-    <section id="gallery" ref={ref} className="scroll-mt-16 text-center">
+    <section id="gallery" className="text-center">
       <SectionHeading>Gallery</SectionHeading>
-      <p className=" font-normal pb-8 w-[42rem] mx-auto">
+      <p className="font-normal pb-8 w-full max-w-[42rem] mx-auto">
         Besides programming, I sometimes also enjoy creating and drawing! Here
         are some works I've made for classes, for others, and for fun throughout
         the past years.

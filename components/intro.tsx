@@ -6,12 +6,10 @@ import { motion } from 'framer-motion';
 import { FaLinkedin } from 'react-icons/fa6';
 import { FaPaperclip } from 'react-icons/fa6';
 import { FaGithub } from 'react-icons/fa6';
-import { useSectionInView } from '@/lib/hooks';
 
 export default function Intro() {
-  const { ref } = useSectionInView("Home", 0.8)
   return (
-    <section id='home' className='scroll-mt-[100rem]' ref={ref}>
+    <section id='home'>
       <motion.div className="flex items-center justify-center"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}>

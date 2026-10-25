@@ -1,14 +1,14 @@
 "use client";
 
-import { motion, spring } from "framer-motion";
+import { motion } from "framer-motion";
 import { links } from "@/lib/data"
-import React, { useContext } from "react";
+import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import clsx from 'clsx';
-import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Header() {
-  const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const pathname = usePathname();
 
   return (
     <header className="z-[999] relative">
@@ -19,35 +19,37 @@ export default function Header() {
 
       <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
         <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-sky-900 sm:w-[initial] sm:flex-nowrap sm:gap-5">
-          {links.map((link) => (
-            <motion.li className="h-3/4 flex items-center justify-center relative"
-              key={link.hash}
-              initial={{ y: -100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}>
-              <Link className={clsx("flex w-full items-center justify-center px-3 py-3 hover:text-sky-800 transition",
-                {
-                  "text-sky-950": activeSection === link.name,
-                })}
-                href={link.hash}
-                onClick={() => {
-                  setActiveSection(link.name);
-                  setTimeOfLastClick(Date.now());
-                }}>
-                {link.name}
+          {links.map((link) => {
+            const isActive = link.href === "/"
+              ? pathname === "/"
+              : pathname.startsWith(link.href);
 
-                {
-                  link.name === activeSection && (
-                    <motion.span className=" rounded-full bg-sky-100 absolute inset-0 -z-10" layoutId="activeSection"
-                      transition={{
-                        type: "tween",
-                        stiffness: 0,
-                      }}
-                    ></motion.span>
-                  )
-                }
-              </Link>
-            </motion.li>
-          ))}
+            return (
+              <motion.li className="h-3/4 flex items-center justify-center relative"
+                key={link.href}
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}>
+                <Link className={clsx("flex w-full items-center justify-center px-3 py-3 hover:text-sky-800 transition",
+                  {
+                    "text-sky-950": isActive,
+                  })}
+                  href={link.href}>
+                  {link.name}
+
+                  {
+                    isActive && (
+                      <motion.span className=" rounded-full bg-sky-100 absolute inset-0 -z-10" layoutId="activeSection"
+                        transition={{
+                          type: "tween",
+                          stiffness: 0,
+                        }}
+                      ></motion.span>
+                    )
+                  }
+                </Link>
+              </motion.li>
+            );
+          })}
         </ul>
       </nav>
     </header>
